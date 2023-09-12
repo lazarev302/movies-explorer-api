@@ -1,5 +1,5 @@
 // Адрес для подключению к базе данных монго в каталог bitfilmsdb
-const URL = 'mongodb://127.0.0.1:27017/bitfilmsdb';
+const { URL = 'mongodb://127.0.0.1:27017/bitfilmsdb' } = process.env;
 
 // Создание нового ресурса
 const CREATED_CODE = 201;

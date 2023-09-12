@@ -23,12 +23,6 @@ const loginUserValidator = celebrate({
   }),
 });
 
-// Валидатор для проверки данных при получении информации о текущем пользователе.
-const getCurrentUserInfoValidator = celebrate({
-  params: Joi.object().keys({
-    userId: Joi.string().hex().length(24),
-  }),
-});
 
 // Валидатор для проверки данных при редактировании информации о пользователе.
 const editUserInfoValidator = celebrate({
@@ -46,7 +40,7 @@ const createMovieValidator = celebrate({
     country: Joi.string().required(),
     director: Joi.string().required(),
     duration: Joi.number().required(),
-    year: Joi.number().required(),
+    year: Joi.string().required(),
     description: Joi.string().required(),
     image: Joi.string().required().regex(emailPattern),
     trailerLink: Joi.string().required().regex(emailPattern),
@@ -68,7 +62,6 @@ module.exports = {
   loginUserValidator,
   registerUserValidator,
   createMovieValidator,
-  getCurrentUserInfoValidator,
   removeMovieValidator,
   editUserInfoValidator,
 };

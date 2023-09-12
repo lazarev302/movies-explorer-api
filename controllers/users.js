@@ -71,7 +71,7 @@ const getCurrentUserInfo = (req, res, next) => {
     .catch((err) => {
       if (err.name === 'CastError') {
         next(
-          new CustomInvalidDataError('Запрашиваемый пользователь не найден'),
+          new CustomInvalidDataError('Неверный формат идентификатора пользователя'),
         );
       } else {
         next(err);
